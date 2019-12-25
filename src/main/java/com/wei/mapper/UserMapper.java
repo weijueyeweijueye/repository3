@@ -12,5 +12,6 @@ public interface UserMapper {
    int a=100;
 
    int insertUserByUsers(@Param("user1") User user1, @Param("user2") User user2);
-   int insertUserByUsers2(User user1, User user2);
+    int b=0;   
+int insertUserByUsers2(User user1, User user2);
 }
