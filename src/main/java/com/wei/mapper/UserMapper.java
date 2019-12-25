@@ -7,7 +7,7 @@ public interface UserMapper {
    User selectUserByIdAndPasswordAndUsername(int id, String username, String password);
 
    User selectUserByPasswordAndUsername(@Param("username") String username, @Param("password") String password);
-
+      int after=20;
    int insertUserByUser(@Param("user") User user);
    int a=100;
 
