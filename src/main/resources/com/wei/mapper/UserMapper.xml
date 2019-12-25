@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 命名空间=当前映射文件的id-->
+<mapper namespace="com.wei.mapper.UserMapper">
+
+
+    <select id="selectUserByIdAndPasswordAndUsername" resultType="com.wei.bean.User">
+        select id ,username,password from user where id=#{param1} and username=#{param2}
+        and password=#{param3}
+    </select>
+    <select id="selectUserByPasswordAndUsername" resultType="com.wei.bean.User">
+        select id ,username,password from user where username=#{username} and password=#{password}
+    </select>
+    <insert id="insertUserByUser">
+        insert into user(username,password) values (#{user.username},#{user.password})
+    </insert>
+    <insert id="insertUserByUsers">
+         insert into user(username,password) values (#{user1.username},#{user1.password}),
+         (#{user2.username},#{user2.password})
+    </insert>
+    <insert id="insertUserByUsers2">
+         insert into user(username,password) values (#{param1.username},#{param1.password}),
+         (#{param2.username},#{param2.password})
+    </insert>
+</mapper>
